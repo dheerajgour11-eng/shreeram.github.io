@@ -9,16 +9,18 @@
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; line-height: 1.6; color: #333; background-color: #f4f7f6; }
         nav { background: #2c3e50; color: white; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; }
         nav a { color: white; margin: 0 20px; text-decoration: none; font-weight: bold; }
-        .hero { padding: 80px 20px; text-align: center; background: white; border-bottom: 5px solid #ff9933; }
+        .hero { padding: 60px 20px; text-align: center; background: white; border-bottom: 5px solid #ff9933; }
         .hero h1 { font-size: 2.5rem; color: #2c3e50; margin-bottom: 5px; }
         .hero h2 { color: #ff9933; margin-top: 0; font-size: 1.5rem; }
         .container { max-width: 900px; margin: auto; padding: 40px 20px; }
-        .section-title { text-align: center; color: #2c3e50; margin-bottom: 40px; font-size: 2rem; border-bottom: 2px solid #ff9933; padding-bottom: 10px; }
-        .feature-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 5px solid #ff9933; margin-bottom: 20px; }
-        .contact-form { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); max-width: 600px; margin: 20px auto; }
-        .contact-form input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
-        .btn { color: white; padding: 12px 30px; text-decoration: none; border-radius: 25px; font-weight: bold; display: inline-block; cursor: pointer; border: none; font-size: 1rem; }
-        footer { background: #2c3e50; color: white; text-align: center; padding: 40px 0; margin-top: 60px; }
+        .section-title { text-align: center; color: #2c3e50; margin-bottom: 30px; font-size: 2rem; border-bottom: 2px solid #ff9933; padding-bottom: 10px; }
+        .feature-card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 5px solid #ff9933; margin-bottom: 20px; }
+        .contact-form { background: #ffffff; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); max-width: 500px; margin: 20px auto; }
+        .contact-form label { font-weight: bold; color: #2c3e50; display: block; margin-top: 10px; }
+        .contact-form input { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 1rem; }
+        .submit-btn { background-color: #ff9933; color: white; width: 100%; padding: 15px; border: none; border-radius: 6px; font-size: 1.1rem; font-weight: bold; cursor: pointer; margin-top: 20px; transition: 0.3s; }
+        .submit-btn:hover { background-color: #e68a00; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 30px 0; margin-top: 50px; }
     </style>
 </head>
 <body>
@@ -33,60 +35,67 @@
     <h1>SRGT School Management</h1>
     <h2>Global Standards, Indian Values</h2>
     <p style="font-size: 1.2rem; color: #7f8c8d;"><strong>Jai Shree Ram</strong></p>
-    <p>Bringing the New York Success Academy Blueprint to India via Salesforce.</p>
-    <a href="#contact" class="btn" style="background: #ff9933;">Get a Free Demo</a>
+    <p>Empowering Rajasthan Schools with the Success Academy Blueprint.</p>
 </div>
 
 <div class="container" id="features">
-    <h2 class="section-title">The Academic Command Center</h2>
+    <h2 class="section-title">The SRGT Success Blueprint</h2>
     
     <div class="feature-card">
-        <h3>Master Curriculum Mapping</h3>
-        <p>Centralized lesson plans mapped to CBSE/RBSE standards to ensure teaching consistency across all branches.</p>
+        <h3>Master Curriculum Control</h3>
+        <p>Centralized lesson planning ensure every teacher delivers world-class quality daily.</p>
     </div>
 
     <div class="feature-card">
         <h3>Daily Science & STEM</h3>
-        <p>Following the SA model of "Science Every Day," we integrate hands-on STEM learning from Kindergarten.</p>
+        <p>Following the SA standard of science every single day for every single student.</p>
     </div>
 
     <div class="feature-card">
-        <h3>Board Readiness Analytics</h3>
-        <p>AI-driven performance tracking that reverse-engineers student data to predict board exam success.</p>
+        <h3>Predictive Board Analytics</h3>
+        <p>Using student data to reverse-engineer success for final Board Exams.</p>
     </div>
 </div>
 
 <div class="container" id="contact">
     <div class="contact-form">
-        <h2 style="text-align: center; color: #2c3e50;">School Demo Inquiry</h2>
+        <h2 style="text-align: center; color: #2c3e50;">Request a School Demo</h2>
+        
         <form action="https://webto.salesforce.com/bin/servlet/bin/WebToLead?encoding=UTF-8" method="POST">
-   
-    <label for="first_name">First Name</label>
-    <input id="first_name" name="first_name" type="text" required>
-    
-    <label for="last_name">Last Name</label>
-    <input id="last_name" name="last_name" type="text" required>
+            
+            <input type="hidden" name="oid" value="00Df600000HbN3tAAA">
+            
+            <input type="hidden" name="retURL" value="https://dheerajgour11-eng.github.io/shreeram.github.io/">
 
-    <label for="company">School Name</label>
-    <input id="company" name="company" type="text" required>
+            <label for="first_name">First Name</label>
+            <input id="first_name" name="first_name" type="text" placeholder="Enter your first name" required>
+            
+            <label for="last_name">Last Name</label>
+            <input id="last_name" name="last_name" type="text" placeholder="Enter your last name" required>
 
-    <label for="phone">Phone</label>
-    <input id="phone" name="phone" type="tel" required>
+            <label for="company">School Name</label>
+            <input id="company" name="company" type="text" placeholder="e.g., Adarsh Vidhya Mandir" required>
 
-    <button type="submit" name="submit" class="btn" style="background-color: #ff9933; width: 100%;">Send to SRGT Command Center</button>
-</form>
+            <label for="phone">Mobile Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="+91-XXXXX-XXXXX" required>
+
+            <label for="city">City / Town</label>
+            <input id="city" name="city" type="text" placeholder="e.g., Nawa City">
+
+            <button type="submit" name="submit" class="submit-btn">Send to SRGT Command Center</button>
+        </form>
     </div>
 </div>
 
-<div class="container" style="text-align: center;">
+<div class="container" style="text-align: center; background: #eee; border-radius: 10px;">
     <h3>Company Details</h3>
     <p><strong>Shree Raj Govind Technologies Private Limited</strong></p>
-    <p>Director: Dheeraj Gour</p>
-    <p>Startup ID: 5F7AB09 | Nawa City, Nagaur, Rajasthan</p>
+    <p>Director: Dheeraj Gour | Startup ID: 5F7AB09</p>
+    <p>Nawa City, Nagaur, Rajasthan</p>
 </div>
 
 <footer>
-    <p>&copy; 2026 SRGT. All Rights Reserved.</p>
+    <p>&copy; 2026 SRGT School Management. All Rights Reserved.</p>
 </footer>
 
 </body>
