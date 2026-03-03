@@ -5,70 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SRGT School Management | Global Standards</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f7f6; color: #333; }
-        header { background: #2c3e50; color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid #ff9933; }
-        .container { max-width: 600px; margin: 30px auto; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        h1 { margin: 0; font-size: 2.2rem; }
-        h2 { color: #ff9933; margin-top: 5px; font-size: 1.2rem; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f7f6; color: #333; line-height: 1.6; }
+        
+        /* Navigation */
+        nav { background: #2c3e50; color: white; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav a { color: white; margin: 0 20px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        nav a:hover { color: #ff9933; }
+
+        /* Hero Section */
+        header { background: white; color: #2c3e50; padding: 80px 20px; text-align: center; border-bottom: 5px solid #ff9933; }
+        header h1 { font-size: 3rem; margin: 0; letter-spacing: 1px; }
+        header h2 { color: #ff9933; margin-top: 10px; font-size: 1.5rem; text-transform: uppercase; }
+        .motto { font-style: italic; color: #7f8c8d; margin-top: 15px; font-size: 1.2rem; }
+
+        /* Container & Sections */
+        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+        .section-title { text-align: center; color: #2c3e50; margin-bottom: 40px; font-size: 2.2rem; position: relative; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 4px; background: #ff9933; margin: 10px auto; }
+
+        /* Feature Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 50px; }
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 4px solid #ff9933; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-10px); }
+        .card h3 { color: #2c3e50; margin-top: 0; }
+
+        /* Form Styling */
+        .contact-box { background: #ffffff; padding: 40px; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); max-width: 600px; margin: 0 auto; }
         .form-group { margin-bottom: 20px; }
         label { display: block; font-weight: bold; margin-bottom: 8px; color: #2c3e50; }
-        input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 1rem; transition: border 0.3s; }
-        input:focus { border: 2px solid #ff9933; outline: none; }
-        .submit-btn { background-color: #ff9933; color: white; width: 100%; padding: 15px; border: none; border-radius: 6px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 10px; }
-        .submit-btn:hover { background-color: #e68a00; transform: translateY(-2px); }
-        .details { text-align: center; margin-top: 30px; font-size: 0.95rem; color: #2c3e50; line-height: 1.6; }
-        footer { text-align: center; padding: 20px; color: #999; font-size: 0.8rem; border-top: 1px solid #ddd; margin-top: 40px; }
+        input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 1rem; transition: 0.3s; }
+        input:focus { border-color: #ff9933; outline: none; box-shadow: 0 0 8px rgba(255,153,51,0.2); }
+        .submit-btn { background-color: #ff9933; color: white; width: 100%; padding: 18px; border: none; border-radius: 6px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .submit-btn:hover { background-color: #e68a00; box-shadow: 0 5px 15px rgba(230,138,0,0.4); }
+
+        /* Company Info */
+        .details { text-align: center; background: #2c3e50; color: white; padding: 40px 20px; margin-top: 60px; }
+        .details p { margin: 5px 0; }
+        footer { text-align: center; padding: 20px; color: #7f8c8d; font-size: 0.9rem; background: #1a252f; }
     </style>
 </head>
 <body>
 
+<nav>
+    <a href="#">Home</a>
+    <a href="#success-model">Success Model</a>
+    <a href="#demo">Request Demo</a>
+</nav>
+
 <header>
     <h1>SRGT School Management</h1>
     <h2>Global Standards, Indian Values</h2>
-    <p style="font-weight: bold; font-size: 1.1rem;">Jai Shree Ram</p>
+    <p class="motto">Jai Shree Ram</p>
+    <p>Empowering Rajasthan Schools with the Success Academy Blueprint</p>
 </header>
 
-<div class="container">
-    <h3 style="text-align: center; color: #2c3e50; margin-bottom: 25px;">Register for School Demo</h3>
-
-    <form action="https://webto.salesforce.com/bin/servlet/bin/WebToLead?encoding=UTF-8" method="POST">
-        
-        <input type="hidden" name="oid" value="00Df600000HbN3tAAA">
-        
-        <input type="hidden" name="retURL" value="https://dheerajgour11-eng.github.io/shreeram.github.io/">
-
-        <div class="form-group">
-            <label for="first_name">First Name</label>
-            <input id="first_name" name="first_name" type="text" placeholder="Enter your first name" required>
+<div class="container" id="success-model">
+    <h2 class="section-title">The SRGT Success Blueprint</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Master Curriculum</h3>
+            <p>Centralized lesson plans developed by experts to ensure every teacher delivers world-class quality daily.</p>
         </div>
-
-        <div class="form-group">
-            <label for="last_name">Last Name</label>
-            <input id="last_name" name="last_name" type="text" placeholder="Enter your surname" required>
+        <div class="card">
+            <h3>Predictive Analytics</h3>
+            <p>Using real-time student data to reverse-engineer success for Board Exams and STEM excellence.</p>
         </div>
-
-        <div class="form-group">
-            <label for="company">School Name</label>
-            <input id="company" name="company" type="text" placeholder="e.g., Adarsh Vidhya Mandir" required>
+        <div class="card">
+            <h3>Centralized Command</h3>
+            <p>One dashboard for the principal to monitor every classroom, attendance, and exam result instantly.</p>
         </div>
+    </div>
+</div>
 
-        <div class="form-group">
-            <label for="phone">Mobile Number</label>
-            <input id="phone" name="phone" type="tel" placeholder="91 XXXX-XXXXXX" required>
-        </div>
+<div class="container" id="demo" style="background: #ecf0f1; border-radius: 20px;">
+    <h2 class="section-title">Register for a School Demo</h2>
+    <div class="contact-box">
+        <form action="https://webto.salesforce.com/bin/servlet/bin/WebToLead?encoding=UTF-8" method="POST">
+            
+            <input type="hidden" name="oid" value="00Df600000HbN3tAAA">
+            
+            <input type="hidden" name="retURL" value="https://dheerajgour11-eng.github.io/shreeram.github.io/">
 
-        <div class="form-group">
-            <label for="city">City / Town</label>
-            <input id="city" name="city" type="text" placeholder="e.g., Nawa City">
-        </div>
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input id="first_name" name="first_name" type="text" placeholder="Enter your first name" required>
+            </div>
 
-        <button type="submit" name="submit" class="submit-btn">Register for Demo</button>
-    </form>
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input id="last_name" name="last_name" type="text" placeholder="Enter your surname" required>
+            </div>
+
+            <div class="form-group">
+                <label for="company">School Name</label>
+                <input id="company" name="company" type="text" placeholder="e.g., Adarsh Vidhya Mandir" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Mobile Number</label>
+                <input id="phone" name="phone" type="tel" placeholder="+91 XXXX-XXXXXX" required>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City / Town</label>
+                <input id="city" name="city" type="text" placeholder="e.g., Nawa City">
+            </div>
+
+            <button type="submit" name="submit" class="submit-btn">Send to SRGT Command Center</button>
+        </form>
+    </div>
 </div>
 
 <div class="details">
-    <p><strong>Shree Raj Govind Technologies Private Limited</strong></p>
-    <p>Director: Dheeraj Gour | Startup ID: 5F7AB09</p>
+    <h3>Shree Raj Govind Technologies Private Limited</h3>
+    <p><strong>Director: Dheeraj Gour</strong></p>
+    <p>Startup ID: 5F7AB09 | Registered with iStart Rajasthan</p>
     <p>Nawa City, Nagaur, Rajasthan</p>
 </div>
 
