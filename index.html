@@ -11,14 +11,13 @@
         nav a { color: white; margin: 0 20px; text-decoration: none; font-weight: bold; }
         .hero { padding: 80px 20px; text-align: center; background: white; border-bottom: 5px solid #ff9933; }
         .hero h1 { font-size: 3rem; color: #2c3e50; margin-bottom: 10px; }
-        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
-        .section-title { text-align: center; color: #2c3e50; margin-bottom: 40px; font-size: 2rem; border-bottom: 2px solid #ff9933; display: inline-block; width: 100%; padding-bottom: 10px; }
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .feature-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 5px solid #ff9933; }
-        .brochure-box { background: #fff; padding: 40px; border-radius: 15px; margin-top: 40px; border: 1px solid #ddd; }
-        .btn { color: white; padding: 12px 30px; text-decoration: none; border-radius: 25px; font-weight: bold; display: inline-block; margin: 10px; cursor: pointer; border: none; }
-        .contact-btn { background: #ff9933; }
-        .view-btn { background: #2c3e50; }
+        .container { max-width: 900px; margin: auto; padding: 40px 20px; }
+        .section-title { text-align: center; color: #2c3e50; margin-bottom: 40px; font-size: 2rem; border-bottom: 2px solid #ff9933; padding-bottom: 10px; }
+        .feature-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 5px solid #ff9933; margin-bottom: 20px; }
+        .contact-form { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        .btn { color: white; padding: 12px 30px; text-decoration: none; border-radius: 25px; font-weight: bold; display: inline-block; cursor: pointer; border: none; font-size: 1rem; }
+        .submit-btn { background: #ff9933; width: 100%; }
         footer { background: #2c3e50; color: white; text-align: center; padding: 40px 0; margin-top: 60px; }
     </style>
 </head>
@@ -26,65 +25,57 @@
 
 <nav>
     <a href="#">Home</a>
-    <a href="#features">Features</a>
-    <a href="#digital-brochure">Digital Brochure</a>
-    <a href="#about">About</a>
+    <a href="#features">App Details</a>
+    <a href="#contact">Contact Us</a>
 </nav>
 
 <div class="hero">
     <h1>Jai Shree Ram</h1>
     <p style="font-size: 1.2rem;"><strong>SRGT School Management System</strong></p>
-    <p>A specialized Salesforce solution by Shree Raj Govind Technologies.</p>
-    <a href="mailto:admin@srgt.in" class="btn contact-btn">Request a Demo</a>
-    <a href="#digital-brochure" class="btn view-btn">View Digital Brochure</a>
+    <p>A specialized Salesforce-based solution for modern educational institutions.</p>
+    <a href="#contact" class="btn" style="background: #ff9933;">Get Started</a>
 </div>
 
 <div class="container" id="features">
-    <h2 class="section-title">Why Choose SRGT?</h2>
-    <div class="features">
-        <div class="feature-card">
-            <h3>Salesforce Powered</h3>
-            <p>Built using Apex and LWC for maximum security and speed.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Automated Workflows</h3>
-            <p>Automate attendance, exam scheduling, and results.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Secure Data</h3>
-            <p>Your school data is protected by world-class Salesforce encryption.</p>
-        </div>
+    <h2 class="section-title">Technical Architecture</h2>
+    <div class="feature-card">
+        <h3>Salesforce Apex & LWC Integration</h3>
+        <p>Our system uses Lightning Web Components for a fast, responsive UI and Apex for complex backend logic.</p>
     </div>
 </div>
 
-<div class="container" id="digital-brochure">
-    <h2 class="section-title">Digital Brochure: SRGT School App</h2>
-    <div class="brochure-box">
-        <h3>Overview</h3>
-        <p>Our application, <strong>SRGT School Management</strong>, is designed to bridge the gap between school administration, teachers, and parents using the Salesforce platform.</p>
-        
-        <h3>Key Modules</h3>
-        <ul>
-            <li><strong>Student Information System:</strong> Complete digital record of students and classes.</li>
-            <li><strong>Attendance Management:</strong> Track daily presence with automated monthly reports.</li>
-            <li><strong>Examination Portal:</strong> Manage marks, grades, and generate digital marksheets.</li>
-            <li><strong>Teacher Dashboard:</strong> Simple interface for teachers to update daily classroom activities.</li>
-        </ul>
 
-        <h3>Technical Excellence</h3>
-        <p>Developed under the leadership of Director <strong>Dheeraj Gour</strong>, the system utilizes REST APIs for seamless integration with other school tools.</p>
+
+<div class="container" id="contact">
+    <h2 class="section-title">Inquiry for School Demo</h2>
+    <div class="contact-form">
+        <form action="https://formspree.io/f/your_id_here" method="POST">
+            <label>School Name:</label>
+            <input type="text" name="school_name" placeholder="Enter School Name" required>
+            
+            <label>Your Name:</label>
+            <input type="text" name="name" placeholder="Full Name" required>
+            
+            <label>Phone Number:</label>
+            <input type="tel" name="phone" placeholder="Contact Number" required>
+            
+            <label>Message:</label>
+            <textarea name="message" rows="4" placeholder="Tell us about your school needs..."></textarea>
+            
+            <button type="submit" class="btn submit-btn">Send Inquiry</button>
+        </form>
     </div>
 </div>
 
-<div class="container" id="about" style="text-align: center;">
-    <h2 class="section-title">Company Information</h2>
-    <p><strong>Shree Raj Govind Technologies Private Limited</strong> is a registered startup in Rajasthan.</p>
-    <p><strong>Startup ID:</strong> 5F7AB09 | <strong>Location:</strong> Nawa City, Nagaur</p>
+<div class="container" style="text-align: center;">
+    <h3>Company Details</h3>
+    <p><strong>Shree Raj Govind Technologies Private Limited</strong></p>
+    <p>Director: Dheeraj Gour</p>
+    <p>Startup ID: 5F7AB09 | Nawa City, Nagaur, Rajasthan</p>
 </div>
 
 <footer>
-    <p>&copy; 2026 Shree Raj Govind Technologies Private Limited.</p>
-    <p>Empowering Schools through Innovation.</p>
+    <p>&copy; 2026 SRGT. All Rights Reserved.</p>
 </footer>
 
 </body>
