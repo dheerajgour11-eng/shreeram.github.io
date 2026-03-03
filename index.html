@@ -3,59 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shree Ram Project | SRGT</title>
+    <title>SRGT School Management | Shree Ram Project</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; line-height: 1.6; color: #333; background-color: #f9f9f9; }
-        header { background: #ff9933; color: white; padding: 1rem 0; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        nav { background: #333; color: white; padding: 10px; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        .hero { padding: 60px 20px; text-align: center; background: white; }
-        .hero h1 { font-size: 2.5rem; color: #ff9933; margin-bottom: 10px; }
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        .services { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
-        .service-card { background: white; padding: 20px; border-radius: 8px; flex: 1; min-width: 250px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-top: 4px solid #ff9933; }
-        .service-card h3 { color: #ff9933; }
-        footer { background: #333; color: white; text-align: center; padding: 20px 0; margin-top: 40px; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; line-height: 1.6; color: #333; background-color: #f4f7f6; }
+        header { background: #ff9933; color: white; padding: 2rem 0; text-align: center; }
+        nav { background: #2c3e50; color: white; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; }
+        nav a { color: white; margin: 0 20px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        nav a:hover { color: #ff9933; }
+        .hero { padding: 80px 20px; text-align: center; background: white; border-bottom: 5px solid #ff9933; }
+        .hero h1 { font-size: 3rem; color: #2c3e50; margin-bottom: 10px; }
+        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+        .section-title { text-align: center; color: #2c3e50; margin-bottom: 40px; font-size: 2rem; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .feature-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; border-left: 5px solid #ff9933; }
+        .feature-card:hover { transform: translateY(-10px); }
+        .feature-card h3 { color: #ff9933; margin-top: 0; }
+        .feature-card ul { padding-left: 20px; color: #666; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 40px 0; margin-top: 60px; }
+        .contact-btn { background: #ff9933; color: white; padding: 12px 30px; text-decoration: none; border-radius: 25px; font-weight: bold; display: inline-block; margin-top: 20px; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Shree Ram Project</h1>
-</header>
-
 <nav>
     <a href="#">Home</a>
-    <a href="#services">Services</a>
-    <a href="mailto:admin@srgt.in">Contact</a>
+    <a href="#features">App Features</a>
+    <a href="#about">About SRGT</a>
 </nav>
 
 <div class="hero">
     <h1>Jai Shree Ram</h1>
-    <p>Innovating Educational Management through Advanced Technology.</p>
+    <p style="font-size: 1.2rem;">Empowering Education with <strong>SRGT School Management</strong></p>
+    <p>A specialized Salesforce-based solution for modern schools.</p>
+    <a href="mailto:admin@srgt.in" class="contact-btn">Request a Demo</a>
 </div>
 
-<div class="container" id="services">
-    <h2 style="text-align:center;">Our Services</h2>
-    <div class="services">
-        <div class="service-card">
-            <h3>School Management</h3>
-            <p>Custom Salesforce solutions for attendance, exams, and student tracking.</p>
+<div class="container" id="features">
+    <h2 class="section-title">Core Application Features</h2>
+    <div class="features">
+        <div class="feature-card">
+            <h3>Student & Class Admin</h3>
+            <p>Manage entire school hierarchies within Salesforce:</p>
+            <ul>
+                <li>Digital Student Profiles</li>
+                <li>Class & Section Mapping</li>
+                <li>Teacher Assignments</li>
+            </ul>
         </div>
-        <div class="service-card">
-            <h3>IT Consulting</h3>
-            <p>Expert guidance for startups and technology infrastructure.</p>
+        <div class="feature-card">
+            <h3>Attendance Tracking</h3>
+            <p>Real-time monitoring of daily presence:</p>
+            <ul>
+                <li>Automated Attendance Logs</li>
+                <li>Monthly Reporting</li>
+                <li>Parent Notifications</li>
+            </ul>
         </div>
-        <div class="service-card">
-            <h3>Custom Development</h3>
-            <p>Building specialized Apex and LWC applications tailored to your needs.</p>
+        <div class="feature-card">
+            <h3>Exam & Result Management</h3>
+            <p>Handle complex grading and exam schedules:</p>
+            <ul>
+                <li>Exam Time-Table Generation</li>
+                <li>Digital Marksheets</li>
+                <li>Performance Analytics</li>
+            </ul>
         </div>
     </div>
 </div>
 
+<div class="container" id="about" style="text-align: center; background: #fff; border-radius: 15px; padding: 40px;">
+    <h2 class="section-title">About the Director</h2>
+    <p><strong>Dheeraj Gour</strong> leads <strong>Shree Raj Govind Technologies Private Limited</strong> with a vision to bring high-end IT consulting and Salesforce development to Rajasthan.</p>
+    <p>Located in Nawa City, Nagaur, we specialize in building custom Apex and LWC solutions.</p>
+</div>
+
 <footer>
     <p>&copy; 2026 Shree Raj Govind Technologies Private Limited.</p>
-    <p>Nawa City, Nagaur, Rajasthan.</p>
+    <p>Nawa City, Nagaur, Rajasthan | Startup ID: 5F7AB09</p>
 </footer>
 
 </body>
