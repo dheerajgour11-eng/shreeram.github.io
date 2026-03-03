@@ -7,16 +7,17 @@
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f7f6; color: #333; }
         header { background: #2c3e50; color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid #ff9933; }
-        .container { max-width: 800px; margin: 30px auto; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        h1 { margin: 0; font-size: 2.5rem; }
-        h2 { color: #ff9933; margin-top: 5px; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; font-weight: bold; margin-bottom: 5px; color: #2c3e50; }
-        input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 1rem; }
+        .container { max-width: 600px; margin: 30px auto; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        h1 { margin: 0; font-size: 2.2rem; }
+        h2 { color: #ff9933; margin-top: 5px; font-size: 1.2rem; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin-bottom: 8px; color: #2c3e50; }
+        input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 1rem; transition: border 0.3s; }
+        input:focus { border: 2px solid #ff9933; outline: none; }
         .submit-btn { background-color: #ff9933; color: white; width: 100%; padding: 15px; border: none; border-radius: 6px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 10px; }
-        .submit-btn:hover { background-color: #e68a00; }
-        .details { text-align: center; margin-top: 30px; font-size: 0.9rem; color: #666; }
-        footer { text-align: center; padding: 20px; color: #999; font-size: 0.8rem; }
+        .submit-btn:hover { background-color: #e68a00; transform: translateY(-2px); }
+        .details { text-align: center; margin-top: 30px; font-size: 0.95rem; color: #2c3e50; line-height: 1.6; }
+        footer { text-align: center; padding: 20px; color: #999; font-size: 0.8rem; border-top: 1px solid #ddd; margin-top: 40px; }
     </style>
 </head>
 <body>
@@ -24,21 +25,12 @@
 <header>
     <h1>SRGT School Management</h1>
     <h2>Global Standards, Indian Values</h2>
-    <p>Jai Shree Ram</p>
+    <p style="font-weight: bold; font-size: 1.1rem;">Jai Shree Ram</p>
 </header>
 
 <div class="container">
-    <h3 style="text-align: center; color: #2c3e50;">Request a School Demo</h3>
+    <h3 style="text-align: center; color: #2c3e50; margin-bottom: 25px;">Register for School Demo</h3>
 
-    <form action="https://webto.salesforce.com/bin/servlet/bin/WebToLead?encoding=UTF-8" method="POST">
-    <input type="hidden" name="oid" value="00Df600000HbN3tAAA">
-    <input type="hidden" name="retURL" value="https://dheerajgour11-eng.github.io/shreeram.github.io/">
-
-    <label>School Name</label><input name="company" type="text" required>
-    <label>Mobile</label><input name="phone" type="tel" required>
-    
-    <button type="submit" style="background:#ff9933; color:white;">Register for Demo</button>
-</form>
     <form action="https://webto.salesforce.com/bin/servlet/bin/WebToLead?encoding=UTF-8" method="POST">
         
         <input type="hidden" name="oid" value="00Df600000HbN3tAAA">
@@ -47,12 +39,12 @@
 
         <div class="form-group">
             <label for="first_name">First Name</label>
-            <input id="first_name" name="first_name" type="text" placeholder="Your Name" required>
+            <input id="first_name" name="first_name" type="text" placeholder="Enter your first name" required>
         </div>
 
         <div class="form-group">
             <label for="last_name">Last Name</label>
-            <input id="last_name" name="last_name" type="text" placeholder="Surname" required>
+            <input id="last_name" name="last_name" type="text" placeholder="Enter your surname" required>
         </div>
 
         <div class="form-group">
@@ -62,7 +54,7 @@
 
         <div class="form-group">
             <label for="phone">Mobile Number</label>
-            <input id="phone" name="phone" type="tel" placeholder="+91 XXXX-XXXXXX" required>
+            <input id="phone" name="phone" type="tel" placeholder="91 XXXX-XXXXXX" required>
         </div>
 
         <div class="form-group">
