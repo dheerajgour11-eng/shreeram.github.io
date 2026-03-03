@@ -38,8 +38,28 @@
     <a href="#contact" class="btn" style="background: #ff9933;">Get Started</a>
 </div>
 
-<div class="container" id="features">
-    <h2 class="section-title">Technical Architecture</h2>
+<div class="contact-form">
+    <h2 style="text-align: center; color: #2c3e50;">School Demo Inquiry</h2>
+    <form action="https://webto.salesforce.com/bin/servlet/bin/WebToLead?encoding=UTF-8" method="POST">
+        <input type="hidden" name="oid" value="00Df600000HbN3t">
+        <input type="hidden" name="retURL" value="https://dheerajgour11-eng.github.io/shreeram.github.io/">
+
+        <label for="first_name">Contact Person Name</label>
+        <input id="first_name" name="first_name" type="text" placeholder="First Name" required>
+        <input id="last_name" name="last_name" type="text" placeholder="Last Name" required>
+
+        <label for="company">School Name</label>
+        <input id="company" name="company" type="text" placeholder="e.g., Adarsh Vidhya Mandir" required>
+
+        <label for="phone">Phone Number</label>
+        <input id="phone" name="phone" type="tel" placeholder="91-XXXXX-XXXXX" required>
+
+        <label for="city">City/Town</label>
+        <input id="city" name="city" type="text" placeholder="e.g., Nawa City">
+
+        <button type="submit" name="submit" class="btn submit-btn" style="background-color: #ff9933; color: white; width: 100%; padding: 10px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">Send to SRGT Command Center</button>
+    </form>
+</div>
     <div class="feature-card">
         <h3>Salesforce Apex & LWC Integration</h3>
         <p>Our system uses Lightning Web Components for a fast, responsive UI and Apex for complex backend logic.</p>
