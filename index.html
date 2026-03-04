@@ -12,7 +12,7 @@
             --light-gray: #f2f2f2;
         }
 
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background: var(--white); }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background: var(--white); overflow-x: hidden; }
 
         /* Top Notification Bar */
         .top-bar { 
@@ -24,7 +24,7 @@
         nav { 
             display: flex; justify-content: space-between; align-items: center; 
             padding: 15px 50px; border-bottom: 2px solid var(--sa-orange);
-            background: white;
+            background: white; position: sticky; top: 0; z-index: 1000;
         }
         
         .srgt-logo { 
@@ -39,11 +39,19 @@
             margin-left: 30px; font-size: 0.9rem; text-transform: uppercase;
         }
 
-        /* Hero Section */
+        /* Moving Sanskrit Bar */
+        .moving-bar { background: var(--light-gray); padding: 10px 0; overflow: hidden; border-bottom: 1px solid #ddd; }
+        .scrolling-text { 
+            display: inline-block; white-space: nowrap; font-weight: bold; 
+            color: var(--sa-blue); animation: scroll-left 25s linear infinite; font-size: 1.2rem;
+        }
+        @keyframes scroll-left { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+        /* Hero Section with Indian Smart Classroom Image */
         .hero { 
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-            url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover; background-position: center; height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+            url('https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1950&q=80');
+            background-size: cover; background-position: center; height: 65vh;
             display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
             padding-left: 8%; color: var(--white);
         }
@@ -56,16 +64,14 @@
         }
         .cta-btn:hover { background: #d65d14; transform: scale(1.05); }
 
-        /* Moving Sanskrit Bar */
-        .moving-bar { background: var(--light-gray); padding: 8px 0; overflow: hidden; border-bottom: 1px solid #ddd; }
-        .scrolling-text { 
-            display: inline-block; white-space: nowrap; font-weight: bold; 
-            color: var(--sa-blue); animation: scroll-left 25s linear infinite; 
-        }
-        @keyframes scroll-left { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        /* Features/Benefits Section */
+        .benefits { padding: 80px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .benefit-card { background: var(--light-gray); padding: 40px; border-radius: 8px; border-bottom: 4px solid var(--sa-blue); text-align: center; transition: 0.3s; }
+        .benefit-card:hover { background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .benefit-card h3 { color: var(--sa-blue); margin-bottom: 15px; }
 
         /* Demo Form */
-        .demo-section { padding: 60px 10%; background: #f9f9f9; }
+        .demo-section { padding: 80px 10%; background: #f9f9f9; }
         .form-card { 
             max-width: 550px; margin: auto; padding: 40px; 
             background: white; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -73,13 +79,19 @@
         .form-card h2 { color: var(--sa-blue); margin-bottom: 25px; border-left: 5px solid var(--sa-orange); padding-left: 15px; }
         input { width: 100%; padding: 14px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
 
-        footer { background: var(--sa-blue); color: white; text-align: center; padding: 30px; font-size: 0.9rem; }
+        footer { background: var(--sa-blue); color: white; text-align: center; padding: 40px; font-size: 0.9rem; }
+        
+        @media (max-width: 768px) { 
+            .hero h1 { font-size: 2.5rem; } 
+            nav { padding: 15px 20px; flex-direction: column; gap: 15px; }
+            .nav-links a { margin: 0 10px; }
+        }
     </style>
 </head>
 <body>
 
 <div class="top-bar">
-    Limited Demo Slots Available for 2026-27 Academic Session!
+    तमसो मा ज्योतिर्गमय | Limited Demo Slots Available for 2026-27!
 </div>
 
 <nav>
@@ -89,8 +101,8 @@
     </div>
     <div class="nav-links">
         <a href="#hero">Home</a>
+        <a href="#benefits">Blueprint</a>
         <a href="#demo">Request Demo</a>
-        <a href="#">Modules</a>
     </div>
 </nav>
 
@@ -102,6 +114,21 @@
     <h1>Empowering Excellence in Education</h1>
     <p>A safe, structured, and beautiful learning environment powered by the SRGT Command Center.</p>
     <button class="cta-btn" onclick="location.href='#demo'">BOOK FREE DEMO</button>
+</section>
+
+<section class="benefits" id="benefits">
+    <div class="benefit-card">
+        <h3>Master Curriculum</h3>
+        <p>Digital lesson plans ensuring high academic consistency in every classroom.</p>
+    </div>
+    <div class="benefit-card">
+        <h3>Attendance Logic</h3>
+        <p>Real-time SMS alerts to parents and 40% gain in operational efficiency.</p>
+    </div>
+    <div class="benefit-card">
+        <h3>Exam Analytics</h3>
+        <p>Reverse-engineering Board Exam success through data-driven tracking.</p>
+    </div>
 </section>
 
 <div class="demo-section" id="demo">
@@ -125,7 +152,7 @@
 <footer>
     <p><strong>Shree Raj Govind Technologies Private Limited</strong></p>
     <p>Director: Dheeraj Gour | iStart Rajasthan Startup ID: 5F7AB09</p>
-    <p>&copy; 2026 SRGT Management. All Rights Reserved.</p>
+    <p>Nawa City, Nagaur, Rajasthan | &copy; 2026 SRGT Management.</p>
 </footer>
 
 <script>
@@ -133,7 +160,7 @@
         const now = new Date();
         const hours = now.getHours();
         let timeGreet = (hours < 12) ? "Good Morning" : (hours < 17) ? "Good Afternoon" : "Good Evening";
-        document.getElementById('sanskrit-scroll').innerHTML = "तमसो मा ज्योतिर्गमय | " + timeGreet + "! Welcome to the SRGT Academic Network";
+        document.getElementById('sanskrit-scroll').innerHTML = "विद्या ददाति विनयम् | " + timeGreet + "! Welcome to the SRGT Academic Command Center";
     }
     window.onload = updateGreeting;
 </script>
