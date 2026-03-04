@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRGT School Management | Success Academy Theme</title>
+    <title>SRGT School Management | Professional Education Theme</title>
     <style>
-        /* Success Academy Color Palette */
         :root { 
             --sa-blue: #005596; 
             --sa-orange: #F37021; 
@@ -18,106 +17,123 @@
         /* Top Notification Bar */
         .top-bar { 
             background: var(--sa-blue); color: var(--white); text-align: center; 
-            padding: 15px; font-weight: bold; font-size: 1.1rem;
-        }
-        .apply-btn-small { 
-            background: var(--sa-orange); color: var(--white); padding: 5px 15px; 
-            border-radius: 4px; text-decoration: none; margin-left: 10px;
+            padding: 12px; font-weight: bold; font-size: 1.1rem;
         }
 
-        /* Navigation */
+        /* Clean SRGT Navigation */
         nav { 
             display: flex; justify-content: space-between; align-items: center; 
-            padding: 20px 50px; border-bottom: 1px solid #ddd;
+            padding: 15px 50px; border-bottom: 2px solid var(--sa-orange);
+            background: white;
         }
-        .logo-box { background: var(--sa-orange); color: white; padding: 10px; font-weight: 900; line-height: 1; text-align: center; }
-
-        /* Hero Section with Image Background */
-        .hero { 
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-            url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover; background-position: center; height: 70vh;
-            display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
-            padding-left: 10%; color: var(--white);
-        }
-        .hero h1 { font-size: 4rem; width: 600px; line-height: 1.1; margin: 0; font-weight: 800; }
-        .hero p { font-size: 1.5rem; margin: 20px 0; width: 500px; }
-        .apply-now-btn { 
-            background: var(--sa-orange); color: white; padding: 15px 40px; 
-            font-size: 1.2rem; font-weight: bold; border: none; border-radius: 4px; cursor: pointer;
-        }
-
-        /* Form Styling similar to your image */
-        .demo-container { padding: 80px 10%; background: var(--white); }
-        .form-card { 
-            max-width: 600px; margin: auto; padding: 40px; 
-            border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-        .form-card h2 { color: var(--sa-blue); border-bottom: 4px solid var(--sa-orange); display: inline-block; }
-        input { width: 100%; padding: 15px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
         
+        .srgt-logo { 
+            display: flex; flex-direction: column; align-items: flex-start;
+            color: var(--sa-blue); line-height: 1;
+        }
+        .srgt-logo .main-text { font-size: 1.8rem; font-weight: 900; letter-spacing: -1px; }
+        .srgt-logo .sub-text { font-size: 0.7rem; font-weight: bold; color: var(--sa-orange); letter-spacing: 2px; }
+
+        .nav-links a { 
+            color: var(--sa-blue); text-decoration: none; font-weight: bold; 
+            margin-left: 30px; font-size: 0.9rem; text-transform: uppercase;
+        }
+
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+            url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; background-position: center; height: 60vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+            padding-left: 8%; color: var(--white);
+        }
+        .hero h1 { font-size: 3.5rem; max-width: 700px; line-height: 1.1; margin: 0; font-weight: 800; }
+        .hero p { font-size: 1.3rem; margin: 20px 0; max-width: 500px; }
+        .cta-btn { 
+            background: var(--sa-orange); color: white; padding: 18px 45px; 
+            font-size: 1.2rem; font-weight: bold; border: none; border-radius: 4px; cursor: pointer;
+            transition: 0.3s;
+        }
+        .cta-btn:hover { background: #d65d14; transform: scale(1.05); }
+
         /* Moving Sanskrit Bar */
-        .moving-bar { background: var(--light-gray); padding: 10px 0; overflow: hidden; border-bottom: 2px solid var(--sa-orange); }
+        .moving-bar { background: var(--light-gray); padding: 8px 0; overflow: hidden; border-bottom: 1px solid #ddd; }
         .scrolling-text { 
             display: inline-block; white-space: nowrap; font-weight: bold; 
             color: var(--sa-blue); animation: scroll-left 25s linear infinite; 
         }
         @keyframes scroll-left { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
+        /* Demo Form */
+        .demo-section { padding: 60px 10%; background: #f9f9f9; }
+        .form-card { 
+            max-width: 550px; margin: auto; padding: 40px; 
+            background: white; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .form-card h2 { color: var(--sa-blue); margin-bottom: 25px; border-left: 5px solid var(--sa-orange); padding-left: 15px; }
+        input { width: 100%; padding: 14px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+
+        footer { background: var(--sa-blue); color: white; text-align: center; padding: 30px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
 <div class="top-bar">
-    तमसो मा ज्योतिर्गमय | Now Accepting Demo Requests for 2026-27! <a href="#demo" class="apply-btn-small">REGISTER NOW</a>
+    Limited Demo Slots Available for 2026-27 Academic Session!
 </div>
 
 <nav>
-    <div class="logo-box">SUCCESS<br>ACADEMY<br><span style="font-size:0.6rem">SRGT PARTNER</span></div>
-    <div style="color: var(--sa-blue); font-weight: bold;">
-        ABOUT &nbsp;&nbsp; TOURS & EVENTS &nbsp;&nbsp; SCHOOLS &nbsp;&nbsp; APPLY NOW
+    <div class="srgt-logo">
+        <span class="main-text">SRGT</span>
+        <span class="sub-text">SCHOOL MANAGEMENT</span>
+    </div>
+    <div class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#demo">Request Demo</a>
+        <a href="#">Modules</a>
     </div>
 </nav>
 
 <div class="moving-bar">
-    <div class="scrolling-text" id="greeting">Loading Sanskrit Welcome...</div>
+    <div class="scrolling-text" id="sanskrit-scroll">Loading...</div>
 </div>
 
-<section class="hero">
-    <h1>The Application Deadline is April 1!</h1>
-    <p>A safe, structured, and beautiful learning environment to bring out the best in your child.</p>
-    <button class="apply-now-btn" onclick="location.href='#demo'">Apply Now</button>
+<section class="hero" id="hero">
+    <h1>Empowering Excellence in Education</h1>
+    <p>A safe, structured, and beautiful learning environment powered by the SRGT Command Center.</p>
+    <button class="cta-btn" onclick="location.href='#demo'">BOOK FREE DEMO</button>
 </section>
 
-<div class="demo-container" id="demo">
+<div class="demo-section" id="demo">
     <div class="form-card">
-        <h2>Register for School Demo</h2>
+        <h2>School Registration</h2>
         <form action="https://webto.salesforce.com/bin/servlet/bin/WebToLead?encoding=UTF-8" method="POST">
             <input type="hidden" name="oid" value="00Df600000HbN3tAAA">
             <input type="hidden" name="retURL" value="https://dheerajgour11-eng.github.io/shreeram.github.io/">
             
-            <input name="first_name" type="text" placeholder="First Name" required>
-            <input name="last_name" type="text" placeholder="Last Name" required>
-            <input name="company" type="text" placeholder="School Name" required>
+            <input name="first_name" type="text" placeholder="Principal First Name" required>
+            <input name="last_name" type="text" placeholder="Principal Last Name" required>
+            <input name="company" type="text" placeholder="Full School Name" required>
             <input name="phone" type="tel" placeholder="Mobile Number" required>
-            <input name="city" type="text" placeholder="City/Town">
+            <input name="city" type="text" placeholder="City (e.g., Nawa City)">
             
-            <button type="submit" class="apply-now-btn" style="width: 100%; margin-top: 20px;">Submit to SRGT Center</button>
+            <button type="submit" class="cta-btn" style="width: 100%; margin-top: 10px;">CONNECT TO COMMAND CENTER</button>
         </form>
     </div>
 </div>
 
-<footer style="background: var(--sa-blue); color: white; text-align: center; padding: 40px;">
+<footer>
     <p><strong>Shree Raj Govind Technologies Private Limited</strong></p>
-    <p>Nawa City, Nagaur, Rajasthan | Startup ID: 5F7AB09</p>
+    <p>Director: Dheeraj Gour | iStart Rajasthan Startup ID: 5F7AB09</p>
+    <p>&copy; 2026 SRGT Management. All Rights Reserved.</p>
 </footer>
 
 <script>
     function updateGreeting() {
         const now = new Date();
         const hours = now.getHours();
-        let msg = (hours < 12) ? "Good Morning" : (hours < 17) ? "Good Afternoon" : "Good Evening";
-        document.getElementById('greeting').innerHTML = "विद्या ददाति विनयम् | " + msg + "! Welcome to SRGT School Management";
+        let timeGreet = (hours < 12) ? "Good Morning" : (hours < 17) ? "Good Afternoon" : "Good Evening";
+        document.getElementById('sanskrit-scroll').innerHTML = "तमसो मा ज्योतिर्गमय | " + timeGreet + "! Welcome to the SRGT Academic Network";
     }
     window.onload = updateGreeting;
 </script>
