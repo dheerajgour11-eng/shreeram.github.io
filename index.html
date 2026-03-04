@@ -15,32 +15,63 @@
         nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; transition: 0.3s; }
         nav a:hover { color: var(--accent); }
 
+        /* Moving Greeting Bar */
+        .moving-container {
+            width: 100%;
+            overflow: hidden;
+            background: rgba(44, 62, 80, 0.05);
+            padding: 12px 0;
+            border-bottom: 2px solid var(--accent);
+        }
+        .scrolling-text {
+            display: inline-block;
+            white-space: nowrap;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary);
+            animation: scroll-left 20s linear infinite;
+        }
+        @keyframes scroll-left {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
         /* Hero Section */
-        .hero { background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1523050853064-952414639975?auto=format&fit=crop&w=1350&q=80'); 
-                background-size: cover; background-position: center; height: 65vh; display: flex; flex-direction: column; 
-                justify-content: center; align-items: center; text-align: center; color: white; padding: 0 20px; }
-        .hero h1 { font-size: 3.5rem; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        
-        /* Welcome Line Styling */
-        #greeting { font-size: 1.8rem; color: var(--accent); font-weight: bold; margin-bottom: 15px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
+        .hero { 
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), 
+            url('https://images.unsplash.com/photo-1523050853064-952414639975?auto=format&fit=crop&w=1350&q=80'); 
+            background-size: cover; background-position: center; height: 50vh; 
+            display: flex; flex-direction: column; justify-content: center; 
+            align-items: center; text-align: center; color: white; padding: 0 20px; 
+        }
+        .hero h1 { font-size: 3rem; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero h2 { color: var(--accent); margin-top: 10px; font-size: 1.5rem; }
 
         /* Features Section */
-        .container { max-width: 1100px; margin: -50px auto 50px; padding: 0 20px; }
+        .container { max-width: 1100px; margin: -40px auto 50px; padding: 0 20px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-bottom: 5px solid var(--accent); transition: 0.3s; text-align: center; }
+        .card { 
+            background: white; padding: 35px; border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 5px solid var(--accent); 
+            transition: 0.3s; text-align: center; 
+        }
         .card:hover { transform: translateY(-10px); }
         
         /* Form Section */
-        .demo-section { background: white; padding: 60px 20px; border-radius: 20px; margin-top: 50px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        input { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; box-sizing: border-box; }
-        .btn { background: var(--accent); color: white; border: none; padding: 20px; width: 100%; border-radius: 8px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .demo-section { background: white; padding: 50px 30px; border-radius: 20px; margin-top: 50px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        input { width: 100%; padding: 14px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; box-sizing: border-box; }
+        .btn { 
+            background: var(--accent); color: white; border: none; padding: 18px; 
+            width: 100%; border-radius: 8px; font-size: 1.2rem; font-weight: bold; 
+            cursor: pointer; transition: 0.3s; 
+        }
         .btn:hover { background: #e68a00; letter-spacing: 1px; }
 
         /* Footer */
-        footer { background: var(--primary); color: white; padding: 50px 20px; text-align: center; margin-top: 100px; }
+        footer { background: var(--primary); color: white; padding: 40px 20px; text-align: center; margin-top: 80px; }
         
-        @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } .form-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .form-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -49,37 +80,44 @@
     <div class="logo">SRGT School Management</div>
     <div>
         <a href="#home">Home</a>
-        <a href="#features">Success Model</a>
+        <a href="#features">Blueprint</a>
         <a href="#demo">Register</a>
     </div>
 </nav>
 
+<div class="moving-container">
+    <div class="scrolling-text" id="moving-greeting">
+        तमसो मा ज्योतिर्गमय | Loading...
+    </div>
+</div>
+
 <section class="hero" id="home">
-    <div id="greeting">Welcome! Jai Shree Ram</div>
-    
     <h1>Global Standards, Indian Values</h1>
-    <div style="font-size: 1.2rem; margin-top: 20px; opacity: 0.9;">Empowering Rajasthan's Education with Salesforce Technology</div>
+    <h2>Shree Raj Govind Technologies</h2>
+    <div style="font-size: 1.1rem; margin-top: 15px; opacity: 0.9;">
+        Empowering Rajasthan's Education with Salesforce Technology
+    </div>
 </section>
 
 <div class="container" id="features">
     <div class="grid">
         <div class="card">
             <h3>Master Curriculum</h3>
-            <p>Digital lesson plans ensuring consistency and high academic quality.</p>
+            <p>Digital lesson plans ensuring consistency and high academic quality in every classroom.</p>
         </div>
         <div class="card">
             <h3>Attendance Logic</h3>
-            <p>Automated tracking with real-time SMS alerts to parents for student safety.</p>
+            <p>Automated tracking with real-time SMS alerts to parents, increasing operational efficiency by 40%.</p>
         </div>
         <div class="card">
             <h3>Exam Analytics</h3>
-            <p>Reverse-engineering Board Exam success through data-driven tracking.</p>
+            <p>Predictive tools for Board Exam success through data-driven performance tracking.</p>
         </div>
     </div>
 
     <div class="demo-section" id="demo">
-        <h2 style="text-align:center; color: var(--primary);">Book Your School Demo</h2>
-        <p style="text-align:center; color: #666; margin-bottom: 40px;">Join the Success Academy network of high-performing schools.</p>
+        <h2 style="text-align:center; color: var(--primary);">Request an Academic Demo</h2>
+        <p style="text-align:center; color: #666; margin-bottom: 30px;">Connect your school to the SRGT Command Center.</p>
         
         <form action="https://webto.salesforce.com/bin/servlet/bin/WebToLead?encoding=UTF-8" method="POST">
             <input type="hidden" name="oid" value="00Df600000HbN3tAAA">
@@ -94,7 +132,7 @@
                 <input name="phone" type="tel" placeholder="Mobile Number" required>
                 <input name="city" type="text" placeholder="City (e.g., Nawa City)">
             </div>
-            <button type="submit" class="btn">Connect to SRGT Academic Command Center</button>
+            <button type="submit" class="btn">Register for Demo</button>
         </form>
     </div>
 </div>
@@ -106,23 +144,23 @@
 </footer>
 
 <script>
-    // JavaScript for Time-Based Greeting
     function updateGreeting() {
         const now = new Date();
         const hours = now.getHours();
-        let greetingText = "";
+        let timeGreeting = "";
 
         if (hours < 12) {
-            greetingText = "Good Morning! Jai Shree Ram";
+            timeGreeting = "Good Morning";
         } else if (hours < 17) {
-            greetingText = "Good Afternoon! Jai Shree Ram";
+            timeGreeting = "Good Afternoon";
         } else {
-            greetingText = "Good Evening! Jai Shree Ram";
+            timeGreeting = "Good Evening";
         }
 
-        document.getElementById('greeting').innerHTML = greetingText;
+        // Sanskrit Slogan + Time Greeting
+        const fullText = "तमसो मा ज्योतिर्गमय | " + timeGreeting + "! Welcome to the SRGT Academic Command Center";
+        document.getElementById('moving-greeting').innerHTML = fullText;
     }
-    // Load greeting on startup
     window.onload = updateGreeting;
 </script>
 
