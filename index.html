@@ -6,132 +6,117 @@
     <title>SRGT School Management | Academic Command Center</title>
     <style>
         :root { 
-            --srgt-teal: #008080;  /* Vibrant Teal (Global Standards) */
-            --srgt-gold: #ff9933;  /* Classroom Gold (Indian Values) */
-            --light-gray: #f9f9f9; 
-            --dark-blue: #2c3e50; 
+            --srgt-teal: #008080;  /* Professional Tech Teal */
+            --srgt-gold: #ff9933;  /* Indian Classroom Gold */
+            --light-bg: #f4f7f6;
+            --dark-text: #2c3e50;
         }
 
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #ffffff; color: #333; }
-        
-        /* Top Notification Bar */
-        .top-bar { 
-            background: var(--srgt-teal); color: white; text-align: center; 
-            padding: 12px; font-weight: bold; font-size: 1.1rem;
-        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #ffffff; color: var(--dark-text); overflow-x: hidden; }
 
-        /* Nav (Aligned to the image's top edge) */
+        /* Navigation */
         nav { 
             display: flex; justify-content: space-between; align-items: center; 
             padding: 15px 50px; background: white; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--srgt-gold);
         }
-        .srgt-logo { font-size: 1.8rem; font-weight: 900; color: var(--srgt-teal); }
-        .nav-links a { 
-            color: var(--srgt-teal); text-decoration: none; font-weight: bold; 
-            margin-left: 30px; font-size: 0.9rem; text-transform: uppercase;
-        }
-
-        /* Hero Section (Uses your custom image) */
-        .hero { 
-            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), 
-            url('image_4.png'); /* Replace with your actual image path on Mac */
-            background-size: cover; background-position: center; height: 75vh;
-            display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
-            padding-left: 8%; color: white;
-        }
-        .hero h1 { font-size: 3.8rem; max-width: 750px; line-height: 1.1; margin: 0; font-weight: 800; }
-        .hero p { font-size: 1.4rem; margin: 20px 0; max-width: 550px; }
-        .hero .cta-btn { 
-            background: var(--srgt-gold); color: white; padding: 18px 45px; 
-            font-size: 1.3rem; font-weight: bold; border: none; border-radius: 4px; cursor: pointer;
-            transition: 0.3s; margin-top: 15px;
-        }
-        .hero .cta-btn:hover { background: #d68128; }
+        .srgt-logo { font-size: 1.8rem; font-weight: 900; color: var(--srgt-teal); letter-spacing: -1px; }
+        .nav-links a { color: var(--srgt-teal); text-decoration: none; font-weight: bold; margin-left: 30px; font-size: 0.9rem; text-transform: uppercase; }
 
         /* Moving Sanskrit Bar */
-        .moving-bar { background: #f2f2f2; padding: 10px 0; overflow: hidden; border-bottom: 1px solid #ddd; }
+        .moving-bar { background: var(--light-bg); padding: 12px 0; overflow: hidden; border-bottom: 1px solid #ddd; }
         .scrolling-text { 
             display: inline-block; white-space: nowrap; font-weight: bold; 
-            color: var(--srgt-teal); animation: scroll-left 25s linear infinite; font-size: 1.3rem;
+            color: var(--srgt-teal); animation: scroll-left 25s linear infinite; font-size: 1.2rem;
         }
         @keyframes scroll-left { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-        /* Benefits grid */
-        .blueprint { padding: 80px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .bp-card { background: var(--light-gray); padding: 40px; border-radius: 8px; border-top: 5px solid var(--srgt-teal); transition: 0.3s; text-align: center; }
-        .bp-card:hover { transform: translateY(-10px); background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .bp-card h3 { color: var(--srgt-teal); margin-bottom: 15px; }
+        /* Hero Section - Using your Drag & Drop Image */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+            url('smart-classroom.png'); /* Ensure your file is named this */
+            background-size: cover; background-position: center; height: 70vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+            padding-left: 8%; color: white;
+        }
+        .hero h1 { font-size: 3.5rem; max-width: 750px; line-height: 1.1; margin: 0; font-weight: 800; }
+        .hero p { font-size: 1.3rem; margin: 20px 0; max-width: 550px; opacity: 0.9; }
+        .cta-btn { 
+            background: var(--srgt-gold); color: white; padding: 18px 45px; 
+            font-size: 1.2rem; font-weight: bold; border: none; border-radius: 4px; cursor: pointer;
+            transition: 0.3s;
+        }
+        .cta-btn:hover { background: #e68a00; transform: translateY(-3px); }
 
-        /* Demo Form */
-        .demo-section { padding: 80px 10%; background: white; border-top: 1px solid #eee; }
+        /* Success Blueprint Section */
+        .blueprint { padding: 80px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; background: white; }
+        .bp-card { padding: 40px; border-radius: 12px; background: var(--light-bg); border-top: 5px solid var(--srgt-teal); text-align: center; transition: 0.3s; }
+        .bp-card:hover { transform: translateY(-10px); background: white; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        .bp-card h3 { color: var(--srgt-teal); margin-bottom: 15px; font-size: 1.5rem; }
+
+        /* Salesforce Demo Form */
+        .demo-section { padding: 80px 10%; background: #fdfdfd; }
         .form-card { 
             max-width: 550px; margin: auto; padding: 50px; 
-            background: var(--light-gray); border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            background: white; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.08);
         }
-        .form-card h2 { color: var(--srgt-teal); margin-bottom: 30px; border-left: 5px solid var(--srgt-gold); padding-left: 15px; }
-        input { width: 100%; padding: 16px; margin-bottom: 18px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .form-card h2 { color: var(--srgt-teal); margin-bottom: 30px; border-left: 6px solid var(--srgt-gold); padding-left: 20px; }
+        input { width: 100%; padding: 16px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; box-sizing: border-box; }
 
-        footer { background: var(--dark-blue); color: white; text-align: center; padding: 50px; }
+        footer { background: var(--dark-text); color: white; text-align: center; padding: 50px; line-height: 1.6; }
         
-        @media (max-width: 768px) { 
-            .hero h1 { font-size: 2.8rem; } nav { padding: 15px 20px; }
-        }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } nav { padding: 15px 20px; } }
     </style>
 </head>
 <body>
-
-<div class="top-bar">
-    Indian Values, Global Standards in School Management
-</div>
 
 <nav>
     <div class="srgt-logo">SRGT Academic</div>
     <div class="nav-links">
         <a href="#hero">Home</a>
         <a href="#blueprint">Blueprint</a>
-        <a href="#demo">Register</a>
+        <a href="#demo">Demo</a>
     </div>
 </nav>
 
 <div class="moving-bar">
-    <div class="scrolling-text" id="greeting">Loading...</div>
+    <div class="scrolling-text" id="scroll-msg">तमसो मा ज्योतिर्गमय | Loading SRGT Command Center...</div>
 </div>
 
 <section class="hero" id="hero">
-    <h1>Empowering the Next Generation</h1>
-    <p>A safe, structured, and beautiful learning environment powered by the SRGT Command Center.</p>
-    <button class="cta-btn" onclick="location.href='#demo'">REQUEST A DEMO</button>
+    <h1>Global Standards, Indian Values</h1>
+    <p>A safe, structured learning environment powered by the SRGT Academic Command Center.</p>
+    <button class="cta-btn" onclick="location.href='#demo'">BOOK FREE DEMO</button>
 </section>
 
 <section class="blueprint" id="blueprint">
     <div class="bp-card">
         <h3>Master Curriculum</h3>
-        <p>Digital lesson plans ensuring academic consistency.</p>
+        <p>Expert lesson plans ensuring world-class consistency in every classroom.</p>
     </div>
     <div class="bp-card">
         <h3>Attendance Logic</h3>
-        <p>Real-time SMS parent alerts and 40% efficiency.</p>
+        <p>Automated tracking with SMS alerts, boosting efficiency by 40%.</p>
     </div>
     <div class="bp-card">
         <h3>Exam Analytics</h3>
-        <p>Predictive tools reverse-engineering Board Exam success.</p>
+        <p>Predictive tools designed to reverse-engineer Board Exam success.</p>
     </div>
 </section>
 
 <div class="demo-section" id="demo">
     <div class="form-card">
-        <h2>School Registration</h2>
+        <h2>Request School Demo</h2>
         <form action="https://webto.salesforce.com/bin/servlet/bin/WebToLead?encoding=UTF-8" method="POST">
             <input type="hidden" name="oid" value="00Df600000HbN3tAAA">
             <input type="hidden" name="retURL" value="https://dheerajgour11-eng.github.io/shreeram.github.io/">
             
-            <input name="first_name" type="text" placeholder="Principal First Name" required>
-            <input name="last_name" type="text" placeholder="Principal Last Name" required>
-            <input name="company" type="text" placeholder="Full School Name (e.g., Adarsh Vidhya Mandir)" required>
+            <input name="first_name" type="text" placeholder="First Name" required>
+            <input name="last_name" type="text" placeholder="Last Name" required>
+            <input name="company" type="text" placeholder="School Name (e.g., Adarsh Vidhya Mandir)" required>
             <input name="phone" type="tel" placeholder="Mobile Number" required>
-            <input name="city" type="text" placeholder="City (e.g., Nawa City)">
+            <input name="city" type="text" placeholder="City/Town">
             
-            <button type="submit" class="cta-btn" style="width: 100%; margin-top: 10px; background: var(--srgt-teal);">CONNECT TO SRGT CENTER</button>
+            <button type="submit" class="cta-btn" style="width: 100%; background: var(--srgt-teal);">CONNECT TO SRGT CENTER</button>
         </form>
     </div>
 </div>
@@ -143,14 +128,12 @@
 </footer>
 
 <script>
-    function updateGreeting() {
-        const now = new Date();
-        const hours = now.getHours();
-        let msg = (hours < 12) ? "Good Morning" : (hours < 17) ? "Good Afternoon" : "Good Evening";
-        // The moving text combines the Sanskrit slogan and dynamic welcome
-        document.getElementById('greeting').innerHTML = "तमसो मा ज्योतिर्गमय | " + msg + "! Welcome to SRGT Academic Network";
+    function setGreeting() {
+        const hr = new Date().getHours();
+        let timeGreet = (hr < 12) ? "Good Morning" : (hr < 17) ? "Good Afternoon" : "Good Evening";
+        document.getElementById('scroll-msg').innerHTML = "तमसो मा ज्योतिर्गमय | " + timeGreet + "! Welcome to the SRGT Academic Network";
     }
-    window.onload = updateGreeting;
+    window.onload = setGreeting;
 </script>
 
 </body>
