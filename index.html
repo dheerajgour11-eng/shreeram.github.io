@@ -17,29 +17,30 @@
 
         /* Hero Section */
         .hero { background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1523050853064-952414639975?auto=format&fit=crop&w=1350&q=80'); 
-                background-size: cover; background-position: center; height: 60vh; display: flex; flex-direction: column; 
+                background-size: cover; background-position: center; height: 65vh; display: flex; flex-direction: column; 
                 justify-content: center; align-items: center; text-align: center; color: white; padding: 0 20px; }
         .hero h1 { font-size: 3.5rem; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.5rem; color: var(--accent); font-weight: bold; margin: 10px 0; }
+        
+        /* Welcome Line Styling */
+        #greeting { font-size: 1.8rem; color: var(--accent); font-weight: bold; margin-bottom: 15px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
 
         /* Features Section */
         .container { max-width: 1100px; margin: -50px auto 50px; padding: 0 20px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .card { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-bottom: 5px solid var(--accent); transition: 0.3s; text-align: center; }
         .card:hover { transform: translateY(-10px); }
-        .card i { font-size: 3rem; color: var(--accent); margin-bottom: 20px; display: block; }
         
         /* Form Section */
         .demo-section { background: white; padding: 60px 20px; border-radius: 20px; margin-top: 50px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        input, select { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
+        input { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; box-sizing: border-box; }
         .btn { background: var(--accent); color: white; border: none; padding: 20px; width: 100%; border-radius: 8px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.3s; }
         .btn:hover { background: #e68a00; letter-spacing: 1px; }
 
         /* Footer */
         footer { background: var(--primary); color: white; padding: 50px 20px; text-align: center; margin-top: 100px; }
         
-        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .form-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } .form-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -54,8 +55,9 @@
 </nav>
 
 <section class="hero" id="home">
+    <div id="greeting">Welcome! Jai Shree Ram</div>
+    
     <h1>Global Standards, Indian Values</h1>
-    <p>Jai Shree Ram</p>
     <div style="font-size: 1.2rem; margin-top: 20px; opacity: 0.9;">Empowering Rajasthan's Education with Salesforce Technology</div>
 </section>
 
@@ -63,21 +65,21 @@
     <div class="grid">
         <div class="card">
             <h3>Master Curriculum</h3>
-            <p>Expert-designed digital lesson plans ensuring consistency and high academic quality in every classroom.</p>
+            <p>Digital lesson plans ensuring consistency and high academic quality.</p>
         </div>
         <div class="card">
             <h3>Attendance Logic</h3>
-            <p>Automated 30-second attendance tracking with real-time SMS alerts to parents for student safety.</p>
+            <p>Automated tracking with real-time SMS alerts to parents for student safety.</p>
         </div>
         <div class="card">
             <h3>Exam Analytics</h3>
-            <p>Reverse-engineering Board Exam success through data-driven performance tracking and STEM modules.</p>
+            <p>Reverse-engineering Board Exam success through data-driven tracking.</p>
         </div>
     </div>
 
     <div class="demo-section" id="demo">
         <h2 style="text-align:center; color: var(--primary);">Book Your School Demo</h2>
-        <p style="text-align:center; color: #666; margin-bottom: 40px;">Join the "Success Academy" network of high-performing schools.</p>
+        <p style="text-align:center; color: #666; margin-bottom: 40px;">Join the Success Academy network of high-performing schools.</p>
         
         <form action="https://webto.salesforce.com/bin/servlet/bin/WebToLead?encoding=UTF-8" method="POST">
             <input type="hidden" name="oid" value="00Df600000HbN3tAAA">
@@ -101,8 +103,28 @@
     <p><strong>Shree Raj Govind Technologies Private Limited</strong></p>
     <p>Director: Dheeraj Gour | iStart Rajasthan Startup ID: 5F7AB09</p>
     <p>Nawa City, Nagaur, Rajasthan</p>
-    <div style="margin-top: 20px; font-size: 0.8rem; color: #888;">&copy; 2026 SRGT. All Rights Reserved.</div>
 </footer>
+
+<script>
+    // JavaScript for Time-Based Greeting
+    function updateGreeting() {
+        const now = new Date();
+        const hours = now.getHours();
+        let greetingText = "";
+
+        if (hours < 12) {
+            greetingText = "Good Morning! Jai Shree Ram";
+        } else if (hours < 17) {
+            greetingText = "Good Afternoon! Jai Shree Ram";
+        } else {
+            greetingText = "Good Evening! Jai Shree Ram";
+        }
+
+        document.getElementById('greeting').innerHTML = greetingText;
+    }
+    // Load greeting on startup
+    window.onload = updateGreeting;
+</script>
 
 </body>
 </html>
