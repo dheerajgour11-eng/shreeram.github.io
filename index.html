@@ -7,41 +7,26 @@
     <style>
         html { scroll-behavior: smooth; }
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f7f6; color: #333; line-height: 1.6; }
-        
-        /* Navigation */
         nav { background: #2c3e50; color: white; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         nav a { color: white; margin: 0 20px; text-decoration: none; font-weight: bold; transition: 0.3s; }
         nav a:hover { color: #ff9933; }
-
-        /* Hero Section */
         header { background: white; color: #2c3e50; padding: 80px 20px; text-align: center; border-bottom: 5px solid #ff9933; }
         header h1 { font-size: 3rem; margin: 0; letter-spacing: 1px; }
         header h2 { color: #ff9933; margin-top: 10px; font-size: 1.5rem; text-transform: uppercase; }
         .motto { font-style: italic; color: #7f8c8d; margin-top: 15px; font-size: 1.2rem; }
-
-        /* Container & Sections */
         .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
         .section-title { text-align: center; color: #2c3e50; margin-bottom: 40px; font-size: 2.2rem; position: relative; }
         .section-title::after { content: ''; display: block; width: 80px; height: 4px; background: #ff9933; margin: 10px auto; }
-
-        /* Feature Cards */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 50px; }
         .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 4px solid #ff9933; transition: transform 0.3s; }
         .card:hover { transform: translateY(-10px); }
-        .card h3 { color: #2c3e50; margin-top: 0; }
-
-        /* Form Styling */
         .contact-box { background: #ffffff; padding: 40px; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); max-width: 600px; margin: 0 auto; }
         .form-group { margin-bottom: 20px; }
         label { display: block; font-weight: bold; margin-bottom: 8px; color: #2c3e50; }
         input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 1rem; transition: 0.3s; }
-        input:focus { border-color: #ff9933; outline: none; box-shadow: 0 0 8px rgba(255,153,51,0.2); }
         .submit-btn { background-color: #ff9933; color: white; width: 100%; padding: 18px; border: none; border-radius: 6px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.3s; }
         .submit-btn:hover { background-color: #e68a00; box-shadow: 0 5px 15px rgba(230,138,0,0.4); }
-
-        /* Company Info */
         .details { text-align: center; background: #2c3e50; color: white; padding: 40px 20px; margin-top: 60px; }
-        .details p { margin: 5px 0; }
         footer { text-align: center; padding: 20px; color: #7f8c8d; font-size: 0.9rem; background: #1a252f; }
     </style>
 </head>
@@ -57,7 +42,6 @@
     <h1>SRGT School Management</h1>
     <h2>Global Standards, Indian Values</h2>
     <p class="motto">Jai Shree Ram</p>
-    <p>Empowering Rajasthan Schools with the Success Academy Blueprint</p>
 </header>
 
 <div class="container" id="success-model">
@@ -65,15 +49,15 @@
     <div class="grid">
         <div class="card">
             <h3>Master Curriculum</h3>
-            <p>Centralized lesson plans developed by experts to ensure every teacher delivers world-class quality daily.</p>
+            <p>Expert lesson plans ensuring world-class quality in every classroom.</p>
         </div>
         <div class="card">
             <h3>Predictive Analytics</h3>
-            <p>Using real-time student data to reverse-engineer success for Board Exams and STEM excellence.</p>
+            <p>Reverse-engineering student success for Board Exams and STEM.</p>
         </div>
         <div class="card">
             <h3>Centralized Command</h3>
-            <p>One dashboard for the principal to monitor every classroom, attendance, and exam result instantly.</p>
+            <p>Monitor every classroom and result from one principal dashboard.</p>
         </div>
     </div>
 </div>
@@ -82,33 +66,26 @@
     <h2 class="section-title">Register for a School Demo</h2>
     <div class="contact-box">
         <form action="https://webto.salesforce.com/bin/servlet/bin/WebToLead?encoding=UTF-8" method="POST">
-    <input type="hidden" name="oid" value="00Df600000HbN3tAAA">
-    
-    <input type="hidden" name="retURL" value="https://www.google.com">
+            <input type="hidden" name="oid" value="00Df600000HbN3tAAA">
+            <input type="hidden" name="retURL" value="https://dheerajgour11-eng.github.io/shreeram.github.io/">
 
-    <label>School Name</label>
-    <input name="company" type="text" required>
+            <div class="form-group"><label>First Name</label><input name="first_name" type="text" required></div>
+            <div class="form-group"><label>Last Name</label><input name="last_name" type="text" required></div>
+            <div class="form-group"><label>School Name</label><input name="company" type="text" required></div>
+            <div class="form-group"><label>Mobile Number</label><input name="phone" type="tel" required></div>
+            <div class="form-group"><label>City / Town</label><input name="city" type="text"></div>
 
-    <label>Mobile</label>
-    <input name="phone" type="tel" required>
-
-    <button type="submit" style="background:#ff9933; color:white; padding:15px; width:100%; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">
-        Send to SRGT Command Center
-    </button>
-</form>
+            <button type="submit" class="submit-btn">Send to SRGT Command Center</button>
+        </form>
     </div>
 </div>
 
 <div class="details">
     <h3>Shree Raj Govind Technologies Private Limited</h3>
     <p><strong>Director: Dheeraj Gour</strong></p>
-    <p>Startup ID: 5F7AB09 | Registered with iStart Rajasthan</p>
-    <p>Nawa City, Nagaur, Rajasthan</p>
+    <p>Startup ID: 5F7AB09 | Nawa City, Rajasthan</p>
 </div>
 
-<footer>
-    &copy; 2026 SRGT School Management. All Rights Reserved.
-</footer>
-
+<footer>&copy; 2026 SRGT School Management. All Rights Reserved.</footer>
 </body>
 </html>
